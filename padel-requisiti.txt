@@ -1,0 +1,46 @@
+
+
+padel schiavi 
+
+requisiti funzionali e tecnici
+
+funzionali 
+-	applicativo mobile (web)
+-	possibilità di autenticarsi e autorizzazione (username a psswd) (guest - user - admin)
+-	PRENOTAZIONE -> possibilità di scegliere fascia oraria libera (slot disponibile)
+-	FORM -> una volta selezionato lo slot, apre form per confermare prenotazione 
+			(??possibilità di poter inserire subito la squadra e possibilità di inserire un solo nome pre tutti??)
+- 	VOCE DASHBOARD -> "invita amici" per completare nel cosa un GAME
+- 	DINAMICAMENTE (??ajax??) -> avere sempre disponibile l'aggiornamento dei slot liberi/occupati
+
+USER PAGA SUBITO - ADMIN NON PAGA 
+(possibilita del proprietario/i campi prenotare per conto di altri es. se ricevono una chiamata esterna)
+(admin può fare tutto 	-	crea user "nominativo" inserisce 1 o al massimo 4 nomi nel form nella creazione partita
+						-	crea partita occupiamo slot 
+						-	eliminare partita quindi liberare slot)
+						
+GUEST -> può consultare orari (slot librei e occupati) giorno per giorno (ragioniamo su mese)
+	
+-	COME FARE PRENOTAZIONE ->  	user può prenatore un solo slot alla volta
+								user può annullare prenotazione (??vincoli temporali??)
+								quanti giocatori della stessa partita devono prenotare il GAME 
+								sistema di invito, per completare squadra (??forum con follower??) 
+								uno stesso giocatore può giocare diversi GAME al giorno e alla settimana
+								
+
+-	GENERALITA' USER	-> 		staistica partite giocate/prenotate
+								promemoria prenotazioni/agenda (??idea - domani giochi??)
+								sistema di notifiche (??email - notifiche app??)
+								
+								
+DB  -> (MODEL) CONTROLLER (API) -> VIEW (??angular??)					
+
+.NET - entity framework  
+typescript Angular
+
+(francesco C# poco - TS buono - SQL poco)
+(antonio C# buono - .net (EF) buono - TS poco - SQL buono)
+
+[unity e integration test]
+
+[to do]
