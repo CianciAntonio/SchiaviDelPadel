@@ -2,7 +2,7 @@
 {
     public class SlotRequest
     {
-        public DateTime DateTime { get; set; }
+        public string DateTime { get; set; }
         public int? UserId { get; set; }
     }
 }

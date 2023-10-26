@@ -13,6 +13,7 @@ namespace SchiaviDelPadel.Domain
         {
 
         }
+
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Slot> Slots { get; set; }
     }

@@ -2,7 +2,6 @@
 using SchiaviDelPadel.Domain.Models;
 using SchiaviDelPadel.Dto.ModelRequest;
 using SchiaviDelPadel.Dto.ModelResponse;
-using System.Text.RegularExpressions;
 
 namespace SchiaviDelPadel.Dto
 {

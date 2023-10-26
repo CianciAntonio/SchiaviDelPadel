@@ -41,5 +41,22 @@ namespace SchiaviDelPadel.Controllers
 
             return slotsResponse;
         }
+
+        // Slot/ByDate?date=07/10/2023 08:30:00
+        [HttpGet("byDate")]
+        public async Task<List<SlotResponse>> GetSlotByDate(string date)
+        {
+            DateTime? _date = DateTime.Parse(date);
+            DateTime dateOnly = _date.Value.Date;
+                
+            List<Slot> slots = await _context.Slots
+                .Where(x=>x.DateTime >= dateOnly && x.DateTime <= dateOnly.AddDays(1))
+                .Include(y => y.User)
+                .ToListAsync();
+
+            List<SlotResponse> slotsResponse = _mapper.Map<List<SlotResponse>>(slots);
+
+            return slotsResponse;
+        }
     }
 }

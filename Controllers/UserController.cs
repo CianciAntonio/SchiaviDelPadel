@@ -25,6 +25,7 @@ namespace SchiaviDelPadel.Controllers
         public async Task AddUser(UserRequest userRequest)
         {
             User user = _mapper.Map<User>(userRequest);
+
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
         }

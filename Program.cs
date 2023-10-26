@@ -29,8 +29,14 @@ namespace SchiaviDelPadel
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseCors(options =>
+            {
+                options.AllowAnyHeader();
+                options.AllowAnyOrigin();
+                options.AllowAnyMethod();
+            });
 
+            app.UseAuthorization();
 
             app.MapControllers();
 
