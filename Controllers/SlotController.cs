@@ -48,6 +48,19 @@ namespace SchiaviDelPadel.Controllers
         {
             DateTime? _date = DateTime.Parse(date);
             DateTime dateOnly = _date.Value.Date;
+            List<SlotResponse> timeSpans = new List<SlotResponse>()
+            {
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(8.5)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(10)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(11.5)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(13)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(14.5)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(16)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(17.5)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(19)},                
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(20.5)},
+                new SlotResponse{UserName= null ,DateTime = dateOnly.AddHours(22)}
+            };
                 
             List<Slot> slots = await _context.Slots
                 .Where(x=>x.DateTime >= dateOnly && x.DateTime <= dateOnly.AddDays(1))
@@ -56,7 +69,18 @@ namespace SchiaviDelPadel.Controllers
 
             List<SlotResponse> slotsResponse = _mapper.Map<List<SlotResponse>>(slots);
 
-            return slotsResponse;
+            foreach(var timeSpan in timeSpans)
+            {
+                foreach(var slot in slotsResponse)
+                {
+                    if(timeSpan.DateTime == slot.DateTime)
+                    {
+                        timeSpan.UserName = slot.UserName;
+                    }
+                }
+            }
+
+            return timeSpans;
         }
     }
 }
